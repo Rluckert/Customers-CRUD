@@ -19,7 +19,7 @@ class Customer extends CI_Model
         $this->db->where('Id', $id);
         $query = $this->db->get('Customer');
         if ($query->num_rows() > 0) {
-            return $query->result();
+            return $query->result_array();
         } else {
             return false;
         }
@@ -27,7 +27,7 @@ class Customer extends CI_Model
     
     function getUsers(){
         $query = $this->db->get('Customer');
-        return $query->result();
+        return $query;
     }
 
     function updateUser($id, $data)
@@ -46,5 +46,3 @@ class Customer extends CI_Model
     }
     
 }
-
-?>
